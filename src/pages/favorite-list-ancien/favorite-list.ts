@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {PlaceService} from '../../providers/place-service-rest';
-import {PlaceDetailPage} from '../place-detail/place-detail';
+import {ShowService} from '../../providers/show-service-rest';
+import {ShowDetailPage} from '../show-detail/show-detail';
 
 @Component({
     selector: 'page-favorite-list',
@@ -11,12 +11,12 @@ export class FavoriteListPage {
 
     favorites: Array<any>;
 
-    constructor(public navCtrl: NavController, public service: PlaceService) {
+    constructor(public navCtrl: NavController, public service: ShowService) {
         this.getFavorites();
     }
 
     itemTapped(favorite) {
-        this.navCtrl.push(PlaceDetailPage, favorite.place);
+        this.navCtrl.push(ShowDetailPage, favorite.show);
     }
 
     deleteItem(favorite) {
