@@ -9,28 +9,18 @@
         <img src="{{place.image}}"/>
         <ion-card-content>
             <h2 class="card-title">{{place.name}}</h2>
-            <p>{{place.venue}}</p>
+            <p>{{place.description}}</p>
         </ion-card-content>
         <ion-list>
             <ion-item>
                 <ion-icon item-left name="clock"></ion-icon>
-                <h3>Date</h3>
-                <ion-note item-right>{{place.date}}</ion-note>
+                <h3>Time</h3>
+                <ion-note item-right>{{place.time}}</ion-note>
             </ion-item>
             <ion-item>
                 <ion-icon item-left name="home"></ion-icon>
                 <h3>Venue</h3>
-                <ion-note item-right>{{place.venue}}</ion-note>
-            </ion-item>
-            <ion-item>
-                <ion-icon item-left name="people"></ion-icon>
-                <h3>Capacity</h3>
-                <ion-note item-right>{{place.capacity}}</ion-note>
-            </ion-item>
-            <ion-item>
-                <ion-icon item-left name="pricetag"></ion-icon>
-                <h3>Price</h3>
-                <ion-note item-right>{{place.price}}</ion-note>
+                <ion-note item-right>{{place.description}}</ion-note>
             </ion-item>
         </ion-list>
 
