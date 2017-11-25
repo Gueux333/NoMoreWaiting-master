@@ -14,9 +14,11 @@ export class WelcomePage {
   viewMode: string = "list";
   map;
   markersGroup;
+  favorites: Array<any>;
 
   constructor(public navCtrl: NavController, public service: PlaceService, public config: Config) {
       this.findAll();
+      this.getFavorites();
   }
 
   openPlaceDetail(place: any) {
@@ -75,4 +77,21 @@ export class WelcomePage {
       });
       this.map.addLayer(this.markersGroup);
   }
+  itemTapped(favorite) {
+      this.navCtrl.push(PlaceDetailPage, favorite.place);
+  }
+
+  deleteItem(favorite) {
+      this.service.unfavorite(favorite)
+          .then(() => {
+              this.getFavorites();
+          })
+          .catch(error => alert(JSON.stringify(error)));
+  }
+
+  getFavorites() {
+      this.service.getFavorites()
+          .then(data => this.favorites = data);
+  }
+
 }

@@ -5,7 +5,8 @@
             <ion-icon name="menu"></ion-icon>
         </button>
         <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"
-                       (ionCancel)="onCancel($event)"></ion-searchbar>
+                       (ionCancel)="onCancel($event)">
+        </ion-searchbar>
     </ion-navbar>
 </ion-header>
 
@@ -20,6 +21,19 @@
                 </ion-thumbnail>
                 <h2>{{place.name}}</h2>
                 <p>{{place.time}}</p>
+            </button>
+        </ion-item-sliding>
+
+    </ion-list>
+    <ion-list *ngIf="viewMode==='favorites'">
+
+        <ion-item-sliding *ngFor="let favorite of favorites">
+            <button ion-item (click)="openPlaceDetail(place)">
+                <ion-thumbnail item-left>
+                    <img src="{{favorite.place.image}}"/>
+                </ion-thumbnail>
+                <h2>{{favorite.place.name}}</h2>
+                <p>{{favorite.place.time}}</p>
             </button>
             <ion-item-options>
                 <button danger (click)="deleteItem(place)">Delete</button>
@@ -36,6 +50,9 @@
     <ion-segment [(ngModel)]="viewMode">
         <ion-segment-button value="list">
             <ion-icon name="list"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="favorites">
+            <ion-icon name="heart"></ion-icon>
         </ion-segment-button>
         <ion-segment-button value="map" (ionSelect)="placeMap()">
             <ion-icon name="map"></ion-icon>

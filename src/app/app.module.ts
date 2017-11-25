@@ -4,13 +4,14 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
+import {PlaceService} from "../providers/place-service-rest";
 import {WelcomePage} from '../pages/welcome/welcome';
 
 import {PlaceDetailPage} from '../pages/place-detail/place-detail';
 import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
 import {AboutPage} from '../pages/about/about';
 
-import {PlaceService} from "../providers/place-service-rest";
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,9 +21,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     WelcomePage,
     AboutPage,
-
     PlaceDetailPage,
-    FavoriteListPage
+    FavoriteListPage,
   ],
   imports: [
     BrowserModule,
@@ -34,9 +34,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     WelcomePage,
     AboutPage,
-
     PlaceDetailPage,
-    FavoriteListPage
+    FavoriteListPage,
+
   ],
   providers: [
     StatusBar,
