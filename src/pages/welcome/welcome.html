@@ -28,7 +28,7 @@
     <ion-list *ngIf="viewMode==='favorites'">
 
         <ion-item-sliding *ngFor="let favorite of favorites">
-            <button ion-item (click)="openPlaceDetail(place)">
+            <button ion-item (click)="openPlaceDetail(favorite.place)">
                 <ion-thumbnail item-left>
                     <img src="{{favorite.place.image}}"/>
                 </ion-thumbnail>
@@ -36,7 +36,7 @@
                 <p>{{favorite.place.time}}</p>
             </button>
             <ion-item-options>
-                <button danger (click)="deleteItem(place)">Delete</button>
+                <button danger (click)="deleteItem(favorite.place)">Delete</button>
             </ion-item-options>
         </ion-item-sliding>
 
@@ -48,11 +48,12 @@
 
 <ion-footer padding>
     <ion-segment [(ngModel)]="viewMode">
-        <ion-segment-button value="list">
-            <ion-icon name="list"></ion-icon>
-        </ion-segment-button>
+
         <ion-segment-button value="favorites">
             <ion-icon name="heart"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="list">
+            <ion-icon name="list"></ion-icon>
         </ion-segment-button>
         <ion-segment-button value="map" (ionSelect)="placeMap()">
             <ion-icon name="map"></ion-icon>
