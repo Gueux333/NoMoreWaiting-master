@@ -2,12 +2,9 @@
 
   <ion-content>
 
-    <img src="assets/img/logo.jpg" class="menu-logo"/>
+    <img menuClose src="assets/img/logo.jpg" class="menu-logo" (click)="openAbout()"/>
 
     <ion-list>
-      <ion-list-header>
-        No More Waiting
-      </ion-list-header>
       <button menuClose ion-item *ngFor="let menuItem of appMenuItems" (click)="openPage(menuItem)">
         <ion-icon item-left [name]="menuItem.icon"></ion-icon>
         {{menuItem.title}}
