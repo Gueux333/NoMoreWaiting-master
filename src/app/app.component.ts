@@ -3,7 +3,7 @@ import {Nav, Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
-import {PlaceListPage} from '../pages/place-list/place-list';
+
 import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {AboutPage} from '../pages/about/about';
@@ -30,7 +30,6 @@ export class MyApp {
         this.initializeApp();
 
         this.appMenuItems = [
-            {title: 'Places', component: PlaceListPage, icon: 'bonfire'},
             {title: 'Favorites', component: FavoriteListPage, icon: 'star'}
         ];
 

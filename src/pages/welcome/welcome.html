@@ -1,30 +1,44 @@
 <ion-header>
+
     <ion-navbar>
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Welcome</ion-title>
+        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"
+                       (ionCancel)="onCancel($event)"></ion-searchbar>
     </ion-navbar>
 </ion-header>
 
-<ion-content no-bounce>
-    <ion-slides>
-        <ion-slide style="background-image: url('assets/img/slide_1.jpg');">
-            <p>No More Waiting is the best app!</p>
-        </ion-slide>
+<ion-content class="place-list">
 
-        <ion-slide style="background-image: url('assets/img/slide_2.jpg')">
-            <p>Don't wait, check & update</p>
-        </ion-slide>
+    <ion-list *ngIf="viewMode==='list'">
 
-        <ion-slide style="background-image: url('assets/img/slide_3.jpg')">
-            <p>
-                Learn how to code with HackX! <br />
-                <button ion-button (click)="openPlaceList()">
-                    Start
-                </button>
-            </p>
-        </ion-slide>
-    </ion-slides>
+        <ion-item-sliding *ngFor="let place of places">
+            <button ion-item (click)="openPlaceDetail(place)">
+                <ion-thumbnail item-left>
+                    <img src="{{place.image}}"/>
+                </ion-thumbnail>
+                <h2>{{place.name}}</h2>
+                <p>{{place.time}}</p>
+            </button>
+            <ion-item-options>
+                <button danger (click)="deleteItem(place)">Delete</button>
+            </ion-item-options>
+        </ion-item-sliding>
+
+    </ion-list>
+
+    <div *ngIf="viewMode==='map'" style="width:100%;height:100%;" id="map"></div>
 
 </ion-content>
+
+<ion-footer padding>
+    <ion-segment [(ngModel)]="viewMode">
+        <ion-segment-button value="list">
+            <ion-icon name="list"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="map" (ionSelect)="placeMap()">
+            <ion-icon name="map"></ion-icon>
+        </ion-segment-button>
+    </ion-segment>
+</ion-footer>

@@ -5,7 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import {WelcomePage} from '../pages/welcome/welcome';
-import {PlaceListPage} from '../pages/place-list/place-list';
+
 import {PlaceDetailPage} from '../pages/place-detail/place-detail';
 import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
 import {AboutPage} from '../pages/about/about';
@@ -20,7 +20,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     WelcomePage,
     AboutPage,
-    PlaceListPage,
+
     PlaceDetailPage,
     FavoriteListPage
   ],
@@ -34,7 +34,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     WelcomePage,
     AboutPage,
-    PlaceListPage,
+
     PlaceDetailPage,
     FavoriteListPage
   ],
