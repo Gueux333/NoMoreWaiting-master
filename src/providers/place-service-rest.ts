@@ -31,9 +31,11 @@ export class PlaceService {
     }
 
     favorite(place) {
+
         this.favoriteCounter = this.favoriteCounter + 1;
         this.favorites.push({id: this.favoriteCounter, place: place});
         return Promise.resolve();
+
     }
 
     unfavorite(favorite) {
