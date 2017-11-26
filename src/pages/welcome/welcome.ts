@@ -2,12 +2,9 @@ import {Component} from '@angular/core';
 import {Config, NavController} from 'ionic-angular';
 import {PlaceService} from '../../providers/place-service-rest';
 import {PlaceDetailPage} from '../place-detail/place-detail';
-import {AboutPage} from '../about/about';
-<<<<<<< HEAD
-import {Geolocation} from '@ionic-native/geolocation';
-=======
 import leaflet from 'leaflet';
->>>>>>> 73d4ab75ebe4d6cdb7cd43628411856f821db3d1
+import {AboutPage} from '../about/about';
+import {Geolocation} from '@ionic-native/geolocation';
 
 @Component({
     selector: 'page-welcome',

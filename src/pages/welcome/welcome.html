@@ -1,15 +1,13 @@
 <ion-header>
 
-  <ion-toolbar>
-    <ion-buttons left>
-      <button ion-button (click)="openAbout()">
-        <img menuClose src="assets/img/logo_verydark.jpg" class="dark-logo"/>
-      </button>
-    </ion-buttons>
-    <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"
-    (ionCancel)="onCancel($event)">
-  </ion-searchbar>
-</ion-toolbar>
+    <ion-navbar>
+        <button ion-button>
+            <img src="assets/img/logo_verydark.jpg" class="dark-logo" (click)="openAbout()"/>
+        </button>
+        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"
+                       (ionCancel)="onCancel($event)">
+        </ion-searchbar>
+    </ion-navbar>
 </ion-header>
 
 <ion-content class="place-list">
