@@ -7,7 +7,7 @@ let placesURL = SERVER_URL + 'api/places/';
 
 @Injectable()
 export class PlaceService {
-  favoriteCounter: number = 0;
+  containPlaceID : Array<string>= []
   favorites: Array<any> = [];
 
     constructor(public http: Http) {
@@ -31,9 +31,11 @@ export class PlaceService {
     }
 
     favorite(place) {
-
-        this.favoriteCounter = this.favoriteCounter + 1;
-        this.favorites.push({id: this.favoriteCounter, place: place});
+        let index = this.containPlaceID.indexOf(place.id);
+        if (index == -1) {
+          this.containPlaceID.push(place.id)
+          this.favorites.push({id: place.id, place: place});
+        }
         return Promise.resolve();
 
     }
@@ -43,7 +45,7 @@ export class PlaceService {
         if (index > -1) {
           this.favorites.splice(index, 1);
         }
-        return Promise.resolve();
+        return Promise.resolve(this.favorites);
     }
 
     update(place) {
