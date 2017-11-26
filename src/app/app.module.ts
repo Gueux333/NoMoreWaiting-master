@@ -8,6 +8,7 @@ import {PlaceService} from "../providers/place-service-rest";
 import {WelcomePage} from '../pages/welcome/welcome';
 
 import {PlaceDetailPage} from '../pages/place-detail/place-detail';
+import {PlaceDetailNearPage} from '../pages/place-detail-near/place-detail-near';
 import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
 import {AboutPage} from '../pages/about/about';
 
@@ -22,6 +23,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WelcomePage,
     AboutPage,
     PlaceDetailPage,
+    PlaceDetailNearPage,
     FavoriteListPage,
   ],
   imports: [
@@ -35,6 +37,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WelcomePage,
     AboutPage,
     PlaceDetailPage,
+    PlaceDetailNearPage,
     FavoriteListPage,
 
   ],

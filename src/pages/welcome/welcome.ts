@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {Config, NavController} from 'ionic-angular';
 import {PlaceService} from '../../providers/place-service-rest';
 import {PlaceDetailPage} from '../place-detail/place-detail';
+import {PlaceDetailNearPage} from '../place-detail-near/place-detail-near';
 import leaflet from 'leaflet';
 import {AboutPage} from '../about/about';
 import {Geolocation} from '@ionic-native/geolocation';
@@ -121,8 +122,8 @@ export class WelcomePage {
       this.geolocation.getCurrentPosition().then((resp) => {
       let latitud = resp.coords.latitude
       let longitud = resp.coords.longitude
-      if (this.getDistanceBetweenPoints(place.lat, place.lng, latitud, longitud) > 100){
-        this.navCtrl.push(PlaceDetailPage, place);
+      if (this.getDistanceBetweenPoints(place.lat, place.lng, latitud, longitud) < 500){
+        this.navCtrl.push(PlaceDetailNearPage, place);
       } else {
         this.navCtrl.push(PlaceDetailPage, place);
       }}).catch((error) => {

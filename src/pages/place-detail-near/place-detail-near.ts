@@ -3,10 +3,10 @@ import {ActionSheetController, ActionSheet, NavController, NavParams, ToastContr
 import {PlaceService} from '../../providers/place-service-rest';
 
 @Component({
-    selector: 'page-place-detail',
-    templateUrl: 'place-detail.html'
+    selector: 'page-place-detail-near',
+    templateUrl: 'place-detail-near.html'
 })
-export class PlaceDetailPage {
+export class PlaceDetailNearPage {
 
     place: any;
 
