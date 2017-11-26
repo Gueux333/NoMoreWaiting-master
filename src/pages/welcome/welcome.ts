@@ -3,6 +3,8 @@ import {Config, NavController} from 'ionic-angular';
 import {PlaceService} from '../../providers/place-service-rest';
 import {PlaceDetailPage} from '../place-detail/place-detail';
 import leaflet from 'leaflet';
+import {AboutPage} from '../about/about';
+
 @Component({
     selector: 'page-welcome',
     templateUrl: 'welcome.html'
@@ -95,7 +97,7 @@ export class WelcomePage {
   }
 
   openAbout(){
-      this.nav.push(AboutPage)
+      this.navCtrl.push(AboutPage)
     }
 
 }

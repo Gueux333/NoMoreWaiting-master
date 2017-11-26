@@ -14,14 +14,14 @@
         <ion-list>
             <ion-item>
                 <ion-icon item-left name="clock"></ion-icon>
-                <h3>Time</h3>
+                <h3>Estimation</h3>
                 <ion-note item-right>{{place.time}}</ion-note>
             </ion-item>
             <ion-item>
-                <ion-icon item-right name="home"></ion-icon>
-                <h3>Venue</h3>
-                <ion-note item-left>{{place.description}}</ion-note>
-            </ion-item>
+            <button ion-button (click)="favorite(place)" clear item-left>
+                Confirm
+            </button>
+        </ion-item>
         </ion-list>
 
         <ion-item>
