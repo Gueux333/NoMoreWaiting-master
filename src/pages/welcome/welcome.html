@@ -1,8 +1,8 @@
 <ion-header>
 
     <ion-navbar>
-        <button ion-button menuToggle>
-            <img menuClose src="assets/img/logo_verydark.jpg" class="dark-logo" (click)="openAbout()"/>
+        <button ion-button>
+            <img src="assets/img/logo_verydark.jpg" class="dark-logo" (click)="openAbout()"/>
         </button>
         <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"
                        (ionCancel)="onCancel($event)">
