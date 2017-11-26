@@ -18,15 +18,15 @@
                 <ion-note item-right>{{place.time}}</ion-note>
             </ion-item>
             <ion-item>
-                <ion-icon item-left name="home"></ion-icon>
+                <ion-icon item-right name="home"></ion-icon>
                 <h3>Venue</h3>
-                <ion-note item-right>{{place.description}}</ion-note>
+                <ion-note item-left>{{place.description}}</ion-note>
             </ion-item>
         </ion-list>
 
         <ion-item>
             <button ion-button icon-left (click)="favorite(place)" clear item-left>
-                <ion-icon name="star"></ion-icon>
+                <ion-icon name="heart"></ion-icon>
                 Favorite
             </button>
             <button ion-button icon-left (click)="share(place)" clear item-right>

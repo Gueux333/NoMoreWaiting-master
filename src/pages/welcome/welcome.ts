@@ -94,4 +94,8 @@ export class WelcomePage {
           .then(data => this.favorites = data);
   }
 
+  openAbout(){
+      this.nav.push(AboutPage)
+    }
+
 }

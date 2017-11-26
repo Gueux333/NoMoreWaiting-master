@@ -43,4 +43,7 @@ export class PlaceService {
         }
         return Promise.resolve();
     }
+
+    update(place) {
+    }
 }
