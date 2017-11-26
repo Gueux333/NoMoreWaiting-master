@@ -1,8 +1,6 @@
 {
   "name": "showtonight-ionic3",
   "app_id": "",
-  "integrations": {
-    "cordova": {}
-  },
+  "integrations": {},
   "type": "ionic-angular"
 }

@@ -4,7 +4,6 @@ import {PlaceService} from '../../providers/place-service-rest';
 import {PlaceDetailPage} from '../place-detail/place-detail';
 import leaflet from 'leaflet';
 import {AboutPage} from '../about/about';
-import {Geolocation} from '@ionic-native/geolocation';
 
 @Component({
     selector: 'page-welcome',
@@ -19,11 +18,14 @@ export class WelcomePage {
   markersGroup;
   favorites: Array<any>;
 
-  constructor(public navCtrl: NavController, public service: PlaceService, public config: Config, private geolocation: Geolocation) {
+  constructor(public navCtrl: NavController, public service: PlaceService, public config: Config) {
       this.findAll();
       this.getFavorites();
   }
 
+  openPlaceDetail(place: any) {
+      this.navCtrl.push(PlaceDetailPage, place);
+  }
 
   onInput(event) {
        // Reset items back to all of the items
@@ -98,33 +100,4 @@ export class WelcomePage {
       this.navCtrl.push(AboutPage)
     }
 
-  distance(lat1, lon1, lat2, lon2) {
-  var radlat1 = Math.PI * lat1/180
-  var radlat2 = Math.PI * lat2/180
-  var theta = lon1-lon2
-  var radtheta = Math.PI * theta/180
-  var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-  dist = Math.acos(dist)
-  dist = dist * 180/Math.PI
-  dist = dist * 60 * 1.1515
-  dist = dist * 1.609344 //  conversion en km
-  dist = dist * 1000 // conversion en m
-  return dist
-}
-
-
-
-openPlaceDetail(place: any) {
-      this.geolocation.getCurrentPosition().then((resp) => {
-      // resp.coords.latitude
-      // resp.coords.longitude
-      }).catch((error) => {
-        console.log('Error getting location', error);
-      });
-      if (distance(place.lat, place.lng, resp.coords.latitude, resp.coords.longitude) > 100){
-        this.navCtrl.push(PlaceDetailPage, place);
-      } else {
-        this.navCtrl.push(PlaceDetailPage, place);
-      }
-  }
 }
