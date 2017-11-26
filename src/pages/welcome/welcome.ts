@@ -84,11 +84,8 @@ export class WelcomePage {
   }
 
   deleteItem(favorite) {
-      this.service.unfavorite(favorite)
-          .then(() => {
-              this.getFavorites();
-          })
-          .catch(error => alert(JSON.stringify(error)));
+      this.service.unfavorite(favorite).then(data => this.favorites = data)
+    
   }
 
   getFavorites() {

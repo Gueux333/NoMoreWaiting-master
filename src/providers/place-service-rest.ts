@@ -43,7 +43,7 @@ export class PlaceService {
         if (index > -1) {
           this.favorites.splice(index, 1);
         }
-        return Promise.resolve();
+        return Promise.resolve(this.favorites);
     }
 
     update(place) {
