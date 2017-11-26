@@ -2,8 +2,8 @@ import {Component} from '@angular/core';
 import {Config, NavController} from 'ionic-angular';
 import {PlaceService} from '../../providers/place-service-rest';
 import {PlaceDetailPage} from '../place-detail/place-detail';
-import leaflet from 'leaflet';
 import {AboutPage} from '../about/about';
+import leaflet from 'leaflet';
 
 @Component({
     selector: 'page-welcome',
