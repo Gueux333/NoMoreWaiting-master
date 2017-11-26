@@ -24318,8 +24318,17 @@ ion-navbar.toolbar {
   margin: 12px 0 0 90px;
 }
 
+.dark-logo {
+  height: 50px;
+  margin: -10px 0 0 10px;
+}
+
+.toolbar-background {
+  background-color: black;
+}
+
 .about-header {
-  background-color: #434954;
+  background-color: #FFFFFF;
   padding: 16px;
   width: 100%;
   min-height: 150px;
