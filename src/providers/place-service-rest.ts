@@ -27,10 +27,16 @@ export class PlaceService {
             .toPromise();
     }
 
-    userUpdate(placeId,Wtime){
-       let postParams = {idPlace : placeId, duration : Wtime, username: 'louis'}
+    userUpdate(placeId, Wtime){
+       let postParams = {
+         idPlace : placeId,
+         duration : Wtime,
+         username: 'louis'
+       };
+
+      console.log(postParams);
+
        this.http.post(userUpdateURL,postParams)
-       .map(res => res.json())
        .toPromise();
     }
 

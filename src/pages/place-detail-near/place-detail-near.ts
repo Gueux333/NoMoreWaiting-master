@@ -20,7 +20,9 @@ export class PlaceDetailNearPage {
     }
 
     userUpdate(){
-      //this.PlaceService.userUpdate(place.id,inputTime);
+      let tmp = this.inputTime.split(':');
+      let tmpWaitingTime = 60 * parseInt(tmp[0]) + parseInt(tmp[1]);
+      this.PlaceService.userUpdate(this.place.id, tmpWaitingTime);
       this.navCtrl.pop()
       this.navCtrl.push(PlaceDetailPage, this.place)
     }
