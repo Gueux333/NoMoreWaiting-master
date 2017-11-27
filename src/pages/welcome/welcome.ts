@@ -15,7 +15,7 @@ export class WelcomePage {
   places: Array<any>;
   placesForSearch: Array<any>;
   searchKey: string = "";
-  viewMode: string = "favorites";
+  viewMode: string = "list";
   map;
   markersGroup;
   favorites: Array<any>;
