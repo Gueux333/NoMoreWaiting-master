@@ -4,6 +4,7 @@ import {SERVER_URL} from './config';
 import 'rxjs/Rx';
 
 let placesURL = SERVER_URL + 'api/places/';
+let userUpdateURL = SERVER_URL + 'api/userupdates/create/'
 
 @Injectable()
 export class PlaceService {
@@ -24,6 +25,13 @@ export class PlaceService {
         return this.http.get(placesURL + "id/" + id)
             .map(res => res.json())
             .toPromise();
+    }
+
+    userUpdate(placeId,Wtime){
+       let postParams = {idPlace : placeId, duration : Wtime, username: 'louis'}
+       this.http.post(userUpdateURL,postParams)
+       .map(res => res.json())
+       .toPromise();
     }
 
     getFavorites() {
