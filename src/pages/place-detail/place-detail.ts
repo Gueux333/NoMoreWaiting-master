@@ -18,15 +18,18 @@ export class PlaceDetailPage {
     }
 
     favorite(place) {
-        this.PlaceService.favorite(place)
-            .then(place => {
-                let toast = this.toastCtrl.create({
-                    message: 'Place added to your favorites',
-                    cssClass: 'mytoast',
-                    duration: 1000
+        let index = this.PlaceService.containPlaceID.indexOf(place.id);
+        if (index == -1) {
+            this.PlaceService.favorite(place)
+                .then(place => {
+                    let toast = this.toastCtrl.create({
+                        message: 'Place added to your favorites',
+                        cssClass: 'mytoast',
+                        duration: 1000
+                    });
+                    toast.present(toast);
                 });
-                toast.present(toast);
-            });
+        }
     }
 
     share(place) {
