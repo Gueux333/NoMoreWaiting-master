@@ -84,7 +84,7 @@ export class WelcomePage {
 
   deleteItem(favorite) {
       this.service.unfavorite(favorite).then(data => this.favorites = data)
-    
+
   }
 
   getFavorites() {
@@ -96,11 +96,11 @@ export class WelcomePage {
       this.navCtrl.push(AboutPage)
     }
 
-  
+
   getDistanceBetweenPoints(lat1, lon1, lat2, lon2){
 
     let R = 6371;
- 
+
     let dLat = this.toRad((lat2 - lat1));
     let dLon = this.toRad((lon2 - lon1));
     let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
@@ -122,14 +122,14 @@ export class WelcomePage {
       this.geolocation.getCurrentPosition().then((resp) => {
       let latitud = resp.coords.latitude
       let longitud = resp.coords.longitude
-      if (this.getDistanceBetweenPoints(place.lat, place.lng, latitud, longitud) < 200){
+      if (this.getDistanceBetweenPoints(place.lat, place.lng, latitud, longitud) < 100000){
         this.navCtrl.push(PlaceDetailNearPage, place);
       } else {
         this.navCtrl.push(PlaceDetailPage, place);
       }}).catch((error) => {
         console.log('Error getting location', error);
       });
-     
+
   }
 
 }

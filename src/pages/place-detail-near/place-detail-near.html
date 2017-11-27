@@ -11,21 +11,14 @@
             <h2 class="card-title">{{place.name}}</h2>
             <p>{{place.description}}</p>
         </ion-card-content>
-        <ion-list>
-            <ion-item>
-                <ion-icon item-left name="clock"></ion-icon>
-                <h3>Estimation</h3>
-                <ion-note item-right>{{place.time}}</ion-note>
-            </ion-item>
-            <ion-item>
-            <button ion-button (click)="favorite(place)" clear item-left>
-                Confirm
-            </button>
-            <ion-label color="primary">Your estimation</ion-label>
-            <ion-input min = 0 type = "number" placeholder="In minutes"></ion-input>
+        <ion-item>
+          <ion-label>Estimation </ion-label>
+          <ion-datetime  displayFormat="H:mm " pickerFormat="H mm " minuteValues="0,5,10,15,30,45" [(ngModel)]="inputTime" >
+          </ion-datetime>
+          <button ion-button  (click)="userUpdate()" clear item-right>
+            Confirm
+          </button>
         </ion-item>
-        </ion-list>
-
         <ion-item>
             <button ion-button icon-left (click)="favorite(place)" clear item-left>
                 <ion-icon name="heart"></ion-icon>
