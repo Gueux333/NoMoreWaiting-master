@@ -122,7 +122,7 @@ export class WelcomePage {
       this.geolocation.getCurrentPosition().then((resp) => {
       let latitud = resp.coords.latitude
       let longitud = resp.coords.longitude
-      if (this.getDistanceBetweenPoints(place.lat, place.lng, latitud, longitud) < 500){
+      if (this.getDistanceBetweenPoints(place.lat, place.lng, latitud, longitud) < 200){
         this.navCtrl.push(PlaceDetailNearPage, place);
       } else {
         this.navCtrl.push(PlaceDetailPage, place);
