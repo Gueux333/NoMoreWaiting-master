@@ -16,7 +16,7 @@
 
     <ion-list *ngIf="viewMode==='list'">
 
-        <ion-item-sliding *ngFor="let place of places">
+        <ion-item-sliding *ngFor="let place of placesAround">
             <button ion-item (click)="openPlaceDetail(place)">
                 <ion-thumbnail item-left>
                     <img src="{{place.image}}"/>
