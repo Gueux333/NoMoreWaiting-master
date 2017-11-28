@@ -122,6 +122,10 @@ export class WelcomePage {
       this.geolocation.getCurrentPosition().then((resp) => {
       let mylat = resp.coords.latitude
       let mylng = resp.coords.longitude
+
+      console.log(mylat,mylng); 
+      
+
       if (this.getDistanceBetweenPoints(place.lat, place.lng, mylat, mylng) < 500){
         this.navCtrl.push(PlaceDetailNearPage, place);
       } else {
@@ -129,8 +133,7 @@ export class WelcomePage {
       }}).catch((error) => {
         console.log('Error getting location', error);
       });
-      return mylat; 
-      return mylng; 
+
   }
 
 }
