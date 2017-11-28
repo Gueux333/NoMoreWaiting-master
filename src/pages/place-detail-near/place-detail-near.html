@@ -14,13 +14,13 @@
          <ion-list>
             <ion-item>
                 <ion-icon item-left name="clock"></ion-icon>
-                <h3>Current estimation</h3>
+                <h3>Current estimate</h3>
                 <ion-note item-right>{{place.time}}</ion-note>
             </ion-item>
         </ion-list>
         <ion-item>
-          <ion-label>Your estimation </ion-label>
-          <ion-datetime  displayFormat="H:mm " pickerFormat="H mm " minuteValues="0,5,10,15,30,45" [(ngModel)]="inputTime" >
+          <ion-label>Your estimate </ion-label>
+          <ion-datetime  displayFormat="H:mm " pickerFormat="H mm " minuteValues="0,5,10,15,20,25,30,35,40,45,50,55" [(ngModel)]="inputTime" >
           </ion-datetime>
           <button ion-button  (click)="userUpdate()" clear item-right>
             Confirm

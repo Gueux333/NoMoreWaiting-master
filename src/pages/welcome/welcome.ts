@@ -54,6 +54,7 @@ export class WelcomePage {
           .catch(error => alert(error));
   }
 
+  
   placeMap() {
       setTimeout(() => {
           this.map = leaflet.map("map").setView([48.85, 2.35], 10);
@@ -122,7 +123,7 @@ export class WelcomePage {
       this.geolocation.getCurrentPosition().then((resp) => {
       let latitud = resp.coords.latitude
       let longitud = resp.coords.longitude
-      if (this.getDistanceBetweenPoints(place.lat, place.lng, latitud, longitud) < 500){
+      if (this.getDistanceBetweenPoints(place.lat, place.lng, latitud, longitud) < 10000000){
         this.navCtrl.push(PlaceDetailNearPage, place);
       } else {
         this.navCtrl.push(PlaceDetailPage, place);
