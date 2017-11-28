@@ -36,7 +36,7 @@ export class WelcomePage {
       // if the value is an empty string don't filter the items
       if (val && val.trim() != '') {
         this.places = this.places.filter((place) => {
-          return (place.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+          return ((place.name.toLowerCase().indexOf(val.toLowerCase()) > -1) || (place.description.toLowerCase().indexOf(val.toLowerCase()) > -1));
         })
       }
   }

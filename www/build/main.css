@@ -24376,6 +24376,11 @@ ion-note {
   font-size: 1.4rem !important;
 }
 
+ion-note {
+  color: #000000 !important;
+  font-size: 1.4rem !important;
+}
+
 page-welcome ion-footer {
   padding: 8px 16px !important;
 }
