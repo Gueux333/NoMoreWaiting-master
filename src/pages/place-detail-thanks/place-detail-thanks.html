@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Place</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngIf="place.id">
+        <img src="{{place.image}}"/>
+        <ion-card-content>
+            <h2 class="card-title">{{place.name}}</h2>
+            <p>{{place.description}}</p>
+        </ion-card-content>
+        <ion-list>
+            <ion-item>
+                <ion-icon item-left name="clock"></ion-icon>
+                <h3>Estimation</h3>
+                <ion-note item-right>{{place.time}}</ion-note>
+            </ion-item>
+            <ion-item>
+                Thank you for your contribution
+        </ion-item>
+        </ion-list>
+
+        <ion-item>
+            <button ion-button icon-left (click)="favorite(place)" clear item-left>
+                <ion-icon name="heart"></ion-icon>
+                Favorite
+            </button>
+            <button ion-button icon-left (click)="share(place)" clear item-right>
+                <ion-icon name="share"></ion-icon>
+                Share
+            </button>
+        </ion-item>
+
+    </ion-card>
+</ion-content>

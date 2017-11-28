@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {ActionSheetController, ActionSheet, NavController, NavParams, ToastController} from 'ionic-angular';
 import {PlaceService} from '../../providers/place-service-rest';
 import {PlaceDetailPage} from '../place-detail/place-detail';
+import {PlaceDetailThanksPage} from '../place-detail-thanks/place-detail-thanks';
 
 @Component({
     selector: 'page-place-detail-near',
@@ -24,7 +25,7 @@ export class PlaceDetailNearPage {
       let tmpWaitingTime = 60 * parseInt(tmp[0]) + parseInt(tmp[1]);
       this.PlaceService.userUpdate(this.place.id, tmpWaitingTime);
       this.navCtrl.pop()
-      this.navCtrl.push(PlaceDetailPage, this.place)
+      this.navCtrl.push(PlaceDetailThanksPage, this.place)
     }
     userUpdateTime(place,wtime){
       //this.PlaceService.userUpdate(place.id,wtime)
