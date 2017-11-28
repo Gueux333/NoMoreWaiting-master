@@ -120,16 +120,17 @@ export class WelcomePage {
 
   openPlaceDetail(place: any) {
       this.geolocation.getCurrentPosition().then((resp) => {
-      let latitud = resp.coords.latitude
-      let longitud = resp.coords.longitude
-      if (this.getDistanceBetweenPoints(place.lat, place.lng, latitud, longitud) < 500){
+      let mylat = resp.coords.latitude
+      let mylng = resp.coords.longitude
+      if (this.getDistanceBetweenPoints(place.lat, place.lng, mylat, mylng) < 500){
         this.navCtrl.push(PlaceDetailNearPage, place);
       } else {
         this.navCtrl.push(PlaceDetailPage, place);
       }}).catch((error) => {
         console.log('Error getting location', error);
       });
-
+      return mylat; 
+      return mylng; 
   }
 
 }
